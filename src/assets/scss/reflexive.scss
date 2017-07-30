@@ -1,0 +1,53 @@
+$grid-seg-width: percentage(1/12);
+$padding-md: 20px;
+$grid-length: 12;
+$screen-xs-min: 0px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+$screen-xl-min: 1400px;
+$screen-xxl-min: 1600px;
+
+
+@mixin col-list-responsive($screen-size-indicator,$screen-size-min){
+	@media only screen and (min-width:#{$screen-size-min}){
+		@include col-list($screen-size-indicator)
+	}
+}
+@mixin col-list($screen-size-indicator){
+	@for $i from 1 through $grid-length{
+		.rf-col-#{$screen-size-indicator}-#{$i}{
+			width: $grid-seg-width * $i;
+		}
+	}
+}
+
+.container,.rf-container{
+	margin-left:auto;
+	margin-right:auto;
+}
+.rf-row{
+	display: -webkit-flex;
+	display: flex;
+	width:100%;
+}
+.rf-block{
+	@extend .rf-row;
+	flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+}
+.rf-col{
+	width:100%;
+}
+
+@include col-list("xs");
+@include col-list-responsive("sm",$screen-sm-min);
+@include col-list-responsive("md",$screen-md-min);
+@include col-list-responsive("lg",$screen-lg-min);
+@include col-list-responsive("xlg",$screen-xl-min);
+@include col-list-responsive("xxlg",$screen-xxl-min);
+
+.rf-col-padding{
+	padding: $padding-md 0;
+}
+

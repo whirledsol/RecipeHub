@@ -1,0 +1,32 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container cover-natural padding-md text-center">
+  <div class="h1">{{title}}</div>
+</div>
+
+<div class="container">
+  <ul>
+    <li *ngFor="let recipe of recipes" (click)="onSelect(recipe)">
+      <img src="" />
+      {{recipe.name}}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="selectedRecipe">
+
+  <div class="container">
+    <h2>{{selectedRecipe.name}} Details</h2>
+  </div>
+
+  <div class="container">
+    <div class="rf-row padding-sm">
+      <label class="rf-col-xs-1">ID: </label>
+      <div class="rf-col-xs-3"><input class="so-input" [(ngModel)]="selectedRecipe.id" placeholder="id" /></div>
+    </div>
+    <div class="rf-row padding-sm">
+      <label class="rf-col-xs-1">Name: </label>
+      <div class="rf-col-xs-3"><input class="so-input" [(ngModel)]="selectedRecipe.name" placeholder="name" /></div>
+    </div>
+  </div>
+
+</div>

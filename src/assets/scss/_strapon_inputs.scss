@@ -1,0 +1,29 @@
+input.so-input,div.so-input{
+	display:block;
+	width:100%;
+	padding:7.5px;
+	border: 1px solid $color-gray;
+	@include borderRadius("4px");
+	@include boxShadow("inset 0 1px 1px rgba(0,0,0,.075)");
+	@include transition("border-color ease-in-out .15s,box-shadow ease-in-out .15s");
+	color:$color-light-black;
+	font-size:1rem;
+}
+input[type=radio].so-input{
+	display:inline-block;
+}
+input.so-input-inline{
+	@extend .so-input;
+	display:inline-block;
+	width:auto;
+}
+input.so-input:focus,input.so-input:active,div.so-input:hover{
+	border-color: $color-blue;
+	outline: 0;
+	@include boxShadow("inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)");
+}
+.so-input[disabled],.so-input[readonly],fieldset[disabled]{
+	background-color: $color-light-gray;
+	opacity:1;
+	cursor:not-allowed;
+}

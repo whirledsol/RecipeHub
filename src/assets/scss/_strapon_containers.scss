@@ -1,0 +1,33 @@
+section.divider,div.divider{
+    margin:$margin-md $margin-sm;
+    border-top: 1px solid $color-light-gray;
+}
+section.cover,div.cover{
+	@include boxShadow("0px 0px 10px 0px rgb(0,0,0)");
+	
+}
+section.cover-dark,div.cover-dark{
+	@extend section.cover;
+	background-color:#ededed;
+}
+section.cover-natural,div.cover-natural{
+	@extend section.cover;
+	background-color:$color-natural;
+}
+section.leaf,div.leaf{
+	padding:15px;
+	border-top-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 3px;
+	border-top-left-radius: 3px;
+	border:1px solid $color-light-gray;
+}
+section.leaf-inverted,div.leaf-inverted{
+	padding:15px;
+	border-bottom-right-radius: 20px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	border:1px solid $color-light-gray;
+}
+

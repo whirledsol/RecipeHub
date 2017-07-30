@@ -1,0 +1,19 @@
+@font-face {
+    font-family: Cabin;
+    src: url(../fonts/Cabin-Bold.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: Cabin;
+    src: url(../fonts/Cabin-Regular.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: Cabin;
+    src: url(../fonts/Cabin-Italic.ttf);
+    font-weight: italic;
+}
+
+body{
+	font-family: 'Cabin', Helvetica;
+}

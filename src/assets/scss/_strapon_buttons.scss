@@ -1,0 +1,47 @@
+.btn-default{
+    display:inline-block;
+    padding: $btn-padding-md;
+    border: 1px solid darken($color-light-gray,10);
+    background-color:$color-light-gray;
+    color:$color-light-black;
+    border-radius:3px;
+    cursor:pointer;
+    margin: 0 1em;
+    @include user-select(none);
+}
+.btn-default:hover{
+	@include boxShadow("0px 0px 3px 1px rgba(0,0,0,0.4)");
+}
+.btn-default:active{
+	@include boxShadow("inset 0px 0px 3px rgba(0,0,0,0.2)");
+}
+.btn-primary{
+    @extend .btn-default;
+    background-color:$color-primary;
+    border-color:darken($color-primary,10);
+    color: $color-white;
+}
+.btn-info{
+    @extend .btn-default;
+    background-color:$color-info;
+    border-color:darken($color-info,10);
+    color: $color-white;
+}
+.btn-success{
+    @extend .btn-default;
+    background-color:$color-success;
+    border-color:darken($color-success,10);
+    color: $color-white;
+}
+.btn-warning{
+    @extend .btn-default;
+    background-color:$color-warning;
+    border-color:darken($color-warning,10);
+    color: $color-white;
+}
+.btn-danger{
+    @extend .btn-default;
+    background-color:$color-danger;
+    border-color:darken($color-danger,10);
+    color: $color-white;
+}

@@ -1,16 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
-import { AppComponent } from './app.component';
+import { RecipeSelector } from './app.selector';
 
 @NgModule({
   declarations: [
-    AppComponent
+    RecipeSelector
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [RecipeSelector]
 })
 export class AppModule { }
+
+
+

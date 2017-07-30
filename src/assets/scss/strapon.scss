@@ -1,0 +1,38 @@
+@import '_strapon_variables';
+@import '_strapon_mixins';
+
+
+
+body,html{
+    margin:0;padding:0;
+}
+
+a.no-underline{
+	text-decoration:none!important;
+}
+a:hover .still-underline{
+	text-decoration:underline;
+}
+
+.no-wrap,.nowrap{
+	white-space:nowrap;
+}
+
+.bold, .text-bold, .font-bold{
+	font-weight:bold;
+}
+
+
+.border-inset{
+	@include boxShadow("inset 0px 0px 20px 1px rgba(0,0,0,0.75)");
+}
+
+@import '_strapon_buttons';
+@import '_strapon_satellites';
+@import '_strapon_colors';
+@import '_strapon_margins';
+@import '_strapon_alignment';
+@import '_strapon_containers';
+@import '_strapon_inputs';
+@import '_strapon_fonts';
+

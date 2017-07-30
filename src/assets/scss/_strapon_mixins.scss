@@ -1,0 +1,56 @@
+/********************
+MIXINS INCLUDE FILE
+********************/
+
+@mixin calc($property, $expression) { 
+  #{$property}: -webkit-calc(#{$expression}); 
+  #{$property}: calc(#{$expression}); 
+} 
+/*************************************************/
+@mixin boxShadow($expression) { 
+	-webkit-box-shadow: #{$expression};
+	-moz-box-shadow: #{$expression};
+	box-shadow: #{$expression};
+} 
+/*************************************************/
+@mixin transition($expression){
+	-webkit-transition: #{$expression};
+	-moz-transition: #{$expression};
+	transition: #{$expression};
+}
+/*************************************************/
+@mixin user-select($val) {
+  -webkit-user-select: $val;
+     -moz-user-select: $val;
+      -ms-user-select: $val;
+          user-select: $val;
+}
+/*************************************************/
+@mixin borderRadius($expression) { 
+	-webkit-border-radius: #{$expression};
+	-moz-border-radius: #{$expression};
+	border-radius: #{$expression};
+} 
+/*************************************************/
+@mixin animate($animations) { 
+    -webkit-animation: $animations;
+    -moz-animation:    $animations;
+    -o-animation:      $animations;
+    animation:         $animations;
+}
+/*************************************************/
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+/*************************************************/
