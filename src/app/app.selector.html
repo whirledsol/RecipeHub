@@ -3,30 +3,59 @@
   <div class="h1">{{title}}</div>
 </div>
 
-<div class="container">
-  <ul>
-    <li *ngFor="let recipe of recipes" (click)="onSelect(recipe)">
-      <img src="" />
-      {{recipe.name}}
-    </li>
-  </ul>
-</div>
-
-<div *ngIf="selectedRecipe">
-
-  <div class="container">
-    <h2>{{selectedRecipe.name}} Details</h2>
-  </div>
-
-  <div class="container">
-    <div class="rf-row padding-sm">
-      <label class="rf-col-xs-1">ID: </label>
-      <div class="rf-col-xs-3"><input class="so-input" [(ngModel)]="selectedRecipe.id" placeholder="id" /></div>
+<div class="container padding-md">
+  <div class="text-center">
+    <div>
+      <div class="h2 text-eclipsed color-gray">Find Food By Name: </div>
+      <input class="so-input-inline" [(ngModel)]="searchText" placeholder="Search Food" />
     </div>
-    <div class="rf-row padding-sm">
-      <label class="rf-col-xs-1">Name: </label>
-      <div class="rf-col-xs-3"><input class="so-input" [(ngModel)]="selectedRecipe.name" placeholder="name" /></div>
+    <div>
+      <div class="h2 text-eclipsed color-gray">Find Food By Ingredients: </div>
+      <textarea class="so-input"></textarea>
     </div>
   </div>
+  <div class="container-md cover rounded padding-sm margin-lg">
 
+    <div class="rf-block text-bold h4">
+      <div class="rf-col-xs-6 rf-col-sm-5">Name</div>
+      <div class="rf-col-xs-6 rf-col-sm-3">Genre</div>
+      <div class="rf-col-xs-3 rf-col-sm-1">Ingredients</div>
+      <div class="rf-col-xs-3 rf-col-sm-1">Difficulty</div>
+      <div class="rf-col-xs-3 rf-col-sm-1">Prep Time</div>
+      <div class="rf-col-xs-3 rf-col-sm-1">Rating</div>
+    </div>
+    <hr>
+    <div class="rf-block link" *ngFor="let recipe of recipes | RecipeLikeNameFilter: searchText" (click)="onSelect(recipe)">
+      <div class="rf-col-xs-6 rf-col-sm-5">{{recipe.name}}</div>
+      <div class="rf-col-xs-6 rf-col-sm-3">{{recipe.genre}}</div>
+      <div class="rf-col-xs-3 rf-col-sm-1">{{recipe.ingredients.length}}</div>
+      <div class="rf-col-xs-3 rf-col-sm-1">{{recipe.difficulty == -1 ? "N/A" : recipe.difficulty}}</div>
+      <div class="rf-col-xs-3 rf-col-sm-1">{{recipe.time == -1 ? "N/A" : recipe.time}}</div>
+      <div class="rf-col-xs-3 rf-col-sm-1">{{recipe.rating == -1 ? "N/A" : recipe.rating}}</div>
+    </div>
+
+  </div>
+
+  <div *ngIf="selectedRecipe">
+
+    <div class="container">
+      <h2>{{selectedRecipe.name}} Details</h2>
+    </div>
+
+    <div class="container">
+      <div class="rf-row padding-sm">
+        <label class="rf-col-xs-1">ID: </label>
+        <div class="rf-col-xs-3"><input class="so-input" [(ngModel)]="selectedRecipe.id" placeholder="id" /></div>
+      </div>
+      <div class="rf-row padding-sm">
+        <label class="rf-col-xs-1">Name: </label>
+        <div class="rf-col-xs-3"><input class="so-input" [(ngModel)]="selectedRecipe.name" placeholder="name" /></div>
+      </div>
+      <div class="rf-row padding-sm">
+        <label class="rf-col-xs-1">Genre: </label>
+        <div class="rf-col-xs-3"><input class="so-input" [(ngModel)]="selectedRecipe.genre" placeholder="genre" /></div>
+      </div>
+    </div>
+
+  </div>
 </div>

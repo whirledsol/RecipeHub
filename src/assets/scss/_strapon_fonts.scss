@@ -24,6 +24,30 @@ body,html{
     @extend .h1;
     font-size:1.1rem;
 }
-.latex{
+.text-latex{
     
+}
+.text-eclipsed{
+  @include transition("all 500ms linear");
+  @include textGradient("-webkit-linear-gradient(#333,#eee)");
+}
+.text-eclipsed:hover,.text-eclipsed:active{
+    @include textGradient("-webkit-linear-gradient(#333,#aaa)");
+}
+.text-link,.link,.action-link{
+    cursor: pointer;
+}
+a.no-underline{
+	text-decoration:none!important;
+}
+a:hover .still-underline{
+	text-decoration:underline;
+}
+
+.no-wrap,.nowrap{
+	white-space:nowrap;
+}
+
+.bold, .text-bold, .font-bold{
+	font-weight:bold;
 }

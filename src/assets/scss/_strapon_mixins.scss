@@ -54,3 +54,8 @@ MIXINS INCLUDE FILE
     }
 }
 /*************************************************/
+@mixin textGradient($expression){
+    background: #{$expression};
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

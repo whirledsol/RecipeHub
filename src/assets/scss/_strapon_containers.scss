@@ -6,6 +6,13 @@ section.cover,div.cover{
 	@include boxShadow("0px 0px 10px 0px rgb(0,0,0)");
 	
 }
+
+div.rounded{
+	@include borderRadius(5px);
+
+}
+
+
 section.cover-dark,div.cover-dark{
 	@extend section.cover;
 	background-color:#ededed;

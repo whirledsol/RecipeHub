@@ -26,6 +26,24 @@ $screen-xxl-min: 1600px;
 	margin-left:auto;
 	margin-right:auto;
 }
+
+.container-sm{
+	
+	@extend .container;
+	width:100%;
+	max-width:$screen-sm-min;
+}
+.container-md{
+	@extend .container;
+	width:100%;
+	max-width:$screen-md-min;
+}
+.container-lg{
+	@extend .container;
+	width:100%;
+	max-width:$screen-lg-min;
+}
+
 .rf-row{
 	display: -webkit-flex;
 	display: flex;
