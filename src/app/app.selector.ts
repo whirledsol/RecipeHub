@@ -49,7 +49,7 @@ export class RecipeSelector {
   title = 'RecipeHub';
   recipes = DEMO_RECIPES;
   selectedRecipe: Recipe;
-  searchText: string;
+  searchFood: string;
 
   onSelect(recipe: Recipe): void {
     this.selectedRecipe = recipe;

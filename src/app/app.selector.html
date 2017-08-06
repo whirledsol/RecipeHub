@@ -4,15 +4,11 @@
 </div>
 
 <div class="container padding-md">
-  <div class="text-center">
-    <div>
-      <div class="h2 text-eclipsed color-gray">Find Food By Name: </div>
-      <input class="so-input-inline" [(ngModel)]="searchText" placeholder="Search Food" />
-    </div>
-    <div>
-      <div class="h2 text-eclipsed color-gray">Find Food By Ingredients: </div>
-      <textarea class="so-input"></textarea>
-    </div>
+  <div class="container-xs">
+    <div class="color-gray text-eclipsed">Find Food By Name</div>
+    <input class="so-input" [(ngModel)]="searchFood" placeholder="Search Food" />
+    <div class="color-gray text-eclipsed margin-top-sm">Find Food By Ingredients</div>
+    <input class="so-input" [(ngModel)]="searchText" placeholder="What do you have?" />
   </div>
   <div class="container-md cover rounded padding-sm margin-lg">
 
@@ -25,7 +21,8 @@
       <div class="rf-col-xs-3 rf-col-sm-1">Rating</div>
     </div>
     <hr>
-    <div class="rf-block link" *ngFor="let recipe of recipes | RecipeLikeNameFilter: searchText" (click)="onSelect(recipe)">
+    <div class="rf-block link margin-top-sm" [class.selected-item]="recipe === selectedRecipe" *ngFor="let recipe of recipes | RecipeLikeNameFilter: searchFood"
+      (click)="onSelect(recipe)">
       <div class="rf-col-xs-6 rf-col-sm-5">{{recipe.name}}</div>
       <div class="rf-col-xs-6 rf-col-sm-3">{{recipe.genre}}</div>
       <div class="rf-col-xs-3 rf-col-sm-1">{{recipe.ingredients.length}}</div>
@@ -54,6 +51,12 @@
       <div class="rf-row padding-sm">
         <label class="rf-col-xs-1">Genre: </label>
         <div class="rf-col-xs-3"><input class="so-input" [(ngModel)]="selectedRecipe.genre" placeholder="genre" /></div>
+      </div>
+      <div class="rf-row padding-sm">
+        <label class="rf-col-xs-1">Ingredients: </label>
+        <div class="rf-col-xs-3">
+          <input class="so-input" [(ngModel)]="selectedRecipe.genre" placeholder="genre" />
+        </div>
       </div>
     </div>
 

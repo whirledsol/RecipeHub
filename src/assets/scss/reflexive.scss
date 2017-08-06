@@ -27,6 +27,11 @@ $screen-xxl-min: 1600px;
 	margin-right:auto;
 }
 
+.container-xs{
+	@extend .container;
+	width:100%;
+	max-width:$screen-sm-min/2;
+}
 .container-sm{
 	
 	@extend .container;
