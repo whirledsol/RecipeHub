@@ -1,4 +1,4 @@
-input.so-input,div.so-input{
+input.so-input,div.so-input,textarea.so-input{
 	display:block;
 	width:100%;
 	padding:7.5px;
@@ -12,12 +12,12 @@ input.so-input,div.so-input{
 input[type=radio].so-input{
 	display:inline-block;
 }
-input.so-input-inline{
+input.so-input-inline,div.so-input-inline,textarea.so-input-inline{
 	@extend .so-input;
 	display:inline-block;
 	width:auto;
 }
-input.so-input:focus,input.so-input:active,div.so-input:hover{
+input.so-input:focus,input.so-input:active,textarea.so-input:focus,textarea.so-input:active,div.so-input:hover{
 	border-color: $color-blue;
 	outline: 0;
 	@include boxShadow("inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)");

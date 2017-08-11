@@ -41,23 +41,47 @@
 
     <div class="container">
       <div class="rf-row padding-sm">
-        <label class="rf-col-xs-1">ID: </label>
-        <div class="rf-col-xs-3"><input class="so-input" [(ngModel)]="selectedRecipe.id" placeholder="id" /></div>
-      </div>
-      <div class="rf-row padding-sm">
-        <label class="rf-col-xs-1">Name: </label>
-        <div class="rf-col-xs-3"><input class="so-input" [(ngModel)]="selectedRecipe.name" placeholder="name" /></div>
-      </div>
-      <div class="rf-row padding-sm">
-        <label class="rf-col-xs-1">Genre: </label>
-        <div class="rf-col-xs-3"><input class="so-input" [(ngModel)]="selectedRecipe.genre" placeholder="genre" /></div>
-      </div>
-      <div class="rf-row padding-sm">
-        <label class="rf-col-xs-1">Ingredients: </label>
-        <div class="rf-col-xs-3">
+        <div class="rf-col-xs-12 rf-col-sm-4">
+          <label class="text-bold">ID: </label>
+          <input class="so-input" [(ngModel)]="selectedRecipe.id" placeholder="id" />
+        </div>
+        <div class="rf-col-xs-12 rf-col-sm-4">
+          <label class="text-bold">Name: </label>
+          <input class="so-input" [(ngModel)]="selectedRecipe.name" placeholder="name" />
+        </div>
+        <div class="rf-col-xs-12 rf-col-sm-4">
+          <label class="text-bold">Genre: </label>
           <input class="so-input" [(ngModel)]="selectedRecipe.genre" placeholder="genre" />
         </div>
       </div>
+
+      <div class="rf-row padding-sm">
+        <div class="rf-col-xs-12 rf-col-sm-4">
+          <label class="text-bold">Difficulty: </label>
+          <input class="so-input" [(ngModel)]="selectedRecipe.difficulty" placeholder="difficulty" />
+        </div>
+        <div class="rf-col-xs-12 rf-col-sm-4">
+          <label class="text-bold">Prep Time: </label>
+          <input class="so-input" [(ngModel)]="selectedRecipe.time" placeholder="time" />
+        </div>
+        <div class="rf-col-xs-12 rf-col-sm-4">
+          <label class="text-bold">Rating: </label>
+          <input class="so-input" [(ngModel)]="selectedRecipe.rating" placeholder="rating" />
+        </div>
+      </div>
+
+      <div class="rf-row padding-sm">
+        <div class="rf-col-xs-12 rf-col-sm-6">
+          <label class="text-bold">Instructions: </label>
+          <textarea class="so-input" [(ngModel)]="selectedRecipe.instructionsText" (ngModelChange)="instructionsParse()" placeholder="instructions"></textarea>
+        </div>
+        <div class="rf-col-xs-12 rf-col-sm-6">
+          <label class="text-bold">Ingredients: </label>
+          <textarea class="so-input" [(ngModel)]="selectedRecipe.ingredientsText"  (ngModelChange)="ingredientsParse()" placeholder="ingredients"></textarea>
+        </div>
+
+      </div>
+
     </div>
 
   </div>

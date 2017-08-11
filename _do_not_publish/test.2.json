@@ -1,0 +1,6 @@
+  {
+    name: 'Western OmNOMlette',
+    genre: 'Breakfast',
+    ingredients: ['oil','eggs','milk','sriracha sauce'],
+    instructions: ['greese a pan']
+  }
